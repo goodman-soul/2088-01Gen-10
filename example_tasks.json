@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "name": "ping-test",
+      "command": "echo 'hello from ping-test' && sleep 1 && echo 'done'",
+      "timeout": 10,
+      "cwd": null
+    },
+    {
+      "name": "fail-demo",
+      "command": "echo 'about to fail...' && exit 42",
+      "timeout": 5
+    },
+    {
+      "name": "timeout-demo",
+      "command": "echo 'sleeping forever...' && sleep 30",
+      "timeout": 2
+    },
+    {
+      "name": "env-demo",
+      "command": "echo \"MODE=$MODE, USER=$USER\"",
+      "timeout": 5,
+      "env": {"MODE": "production"}
+    },
+    {
+      "name": "stderr-demo",
+      "command": "echo 'this is stderr' >&2 && echo 'this is stdout' && exit 1",
+      "timeout": 5
+    }
+  ]
+}
